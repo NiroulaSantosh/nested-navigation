@@ -15,3 +15,9 @@
       },
      child: // your main scaffold
   );
+  
+  
+  **Pros**
+  - you can handle each tab navigation separately
+  **Cons**
+  - Each time you tab bottom nav tab new widget is build, unlike tab view the widget are not placed inside stack. For this you can use `IndexedStack` widget of flutter. But this will not work for me (I don't know how to do). If you have idea share.
