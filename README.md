@@ -2,7 +2,7 @@
 
 **Challanges**
 - How to add persistence appbar and bottom nav bar.
-- How to handle h/w backbutton pressed (like in android) --> if you are inside /home/details and you pressed the back button on android this will close the app.
+- How to handle h/w backbutton pressed (like in android) --> if you are inside `/home/details` and you pressed the back button on android this will close the app.
 
 **Solution**
 - Create new Navigator widget for each of the tab item and send them the GLobalKey<NavigatorState> and handle there respective route inside there Navigator widget
