@@ -1,16 +1,17 @@
 # nested_nav
 
-A new Flutter project.
+**Challanges**
+- How to add persistence appbar and bottom nav bar.
+- How to handle h/w backbutton pressed (like in android) --> if you are inside /home/details and you pressed the back button on android this will close the app.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Solution**
+- Create new Navigator widget for each of the tab item and send them the GLobalKey<NavigatorState> and handle there respective route inside there Navigator widget
+- In Main Navigator of page you have to add WillPopScope widget and pop screen based on the current route state(which is given by the navigator key of respective pages). If route will allow pop then pop the screen during the h/w backbutton action.
+  to find if route is ready or not add the followingn logic
+  ```
+  WillPopScope(
+      onWillPop: () async {
+        return !await _navKeys[_currentTab].currentState!.maybePop();
+      },
+     child: // your main scaffold
+  );
