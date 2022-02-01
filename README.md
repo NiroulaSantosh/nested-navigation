@@ -25,3 +25,22 @@
   **Cons**
   - Each time you tab bottom nav tab new widget is build, unlike tab view the widget are not placed inside stack. For this you can use `IndexedStack` widget of flutter. But this will not work for me (I don't know how to do). If you have idea share.
   - You have to use generated route.
+
+***
+
+# Changing System Statusbar and NavigationBar Color and Brighness
+```
+SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: const Color(0xff022406),
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarColor: const Color(0xff011303),
+      systemStatusBarContrastEnforced: true,
+      systemNavigationBarIconBrightness: Brightness.light,
+      systemNavigationBarDividerColor: const Color(0xff011303),
+      systemNavigationBarContrastEnforced: true,
+    ),
+  );
+  
+ ```
